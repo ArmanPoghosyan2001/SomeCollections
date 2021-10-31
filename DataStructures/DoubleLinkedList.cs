@@ -59,47 +59,44 @@ namespace DataStructures
                 newNode.next.prev = newNode;
             }
         }
-        //public void DeleteNodebyKey(T key)
-        //{
-        //    DNode<T> temp = head;
-        //    if (temp != null && temp.data == key)
-        //    {
-        //        head = temp.next;
-        //        head.prev = null;
-        //        return;
-        //    }
-        //    while (temp != null && temp.data != key)
-        //    {
-        //        temp = temp.next;
-        //    }
-        //    if (temp == null)
-        //    {
-        //        return;
-        //    }
-        //    if (temp.next != null)
-        //    {
-        //        temp.next.prev = temp.prev;
-        //    }
-        //    if (temp.prev != null)
-        //    {
-        //        temp.prev.next = temp.next;
-        //    }
-        //}
+        public void DeleteNodebyKey(T key)
+        {
+            DNode<T> temp = head;
+            if (temp != null && temp.data.Equals(key))
+            {
+                head = temp.next;
+                head.prev = null;
+                return;
+            }
+            while (temp != null && !temp.data.Equals(key))
+            {
+                temp = temp.next;
+            }
+            if (temp == null)
+            {
+                return;
+            }
+            if (temp.next != null)
+            {
+                temp.next.prev = temp.prev;
+            }
+            if (temp.prev != null)
+            {
+                temp.prev.next = temp.next;
+            }
+        }
 
         public void ReverseLinkedList()
         {
             DNode<T> prev = null;
             DNode<T> current = head;
             DNode<T> temp = null;
-            DNode<T> node = null;
             while (current != null)
             {
                 temp = current.next;
-                node = current.prev;
                 current.next = prev;
-                current.prev = node;
+                current.prev = temp.next;
                 prev = current;
-                prev.prev = current.prev;
                 current = temp;
             }
             head = prev;

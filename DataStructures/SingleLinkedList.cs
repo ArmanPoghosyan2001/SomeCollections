@@ -47,26 +47,26 @@ namespace DataStructures
             new_node.next = prev_node.next;
             prev_node.next = new_node;
         }
-        //public void DeleteNodebyKey(T key) 
-        //{
-        //    Node<T> temp = head;
-        //    Node<T> prev = null;
-        //    if (temp != null && temp.data == key)
-        //    {
-        //        head = temp.next;
-        //        return;
-        //    }
-        //    while (temp != null && temp.data != key)
-        //    {
-        //        prev = temp;
-        //        temp = temp.next;
-        //    }
-        //    if (temp == null)
-        //    {
-        //        return;
-        //    }
-        //    prev.next = temp.next;
-        //}
+        public void DeleteNodebyKey(T key)
+        {
+            Node<T> temp = head;
+            Node<T> prev = null;
+            if (temp != null && temp.data.Equals(key))
+            {
+                head = temp.next;
+                return;
+            }
+            while (temp != null && !temp.data.Equals(key))
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            if (temp == null)
+            {
+                return;
+            }
+            prev.next = temp.next;
+        }
         public void ReverseLinkedList()
         {
             Node<T> prev = null;

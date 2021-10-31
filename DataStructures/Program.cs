@@ -9,14 +9,14 @@ namespace DataStructures
         static void Main(string[] args)
         {
 
-            DoubleLinkedList<int> single = new DoubleLinkedList<int>();
+            SingleLinkedList<int> single = new SingleLinkedList<int>();
             single.InsertLast(5);
             single.InsertLast(51);
             single.InsertLast(52);
             single.InsertLast(53);
             single.InsertLast(54);
 
-            single.ReverseLinkedList();
+            single.DeleteNodebyKey(53);
         }
     }
 }
