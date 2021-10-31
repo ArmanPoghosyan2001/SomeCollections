@@ -9,14 +9,15 @@ namespace DataStructures
         static void Main(string[] args)
         {
 
-            SingleLinkedList<int> single = new SingleLinkedList<int>();
-            single.InsertLast(5);
-            single.InsertLast(51);
-            single.InsertLast(52);
-            single.InsertLast(53);
-            single.InsertLast(54);
+            LinkListQueue<int> stack = new LinkListQueue<int>();
+            stack.Enqueue(3);
+            stack.Enqueue(4);
+            stack.Enqueue(5);
+            stack.Enqueue(6);
+            stack.Enqueue(7);
 
-            single.DeleteNodebyKey(53);
+            var t = stack.Dequeue();
+            var k = stack.Peek();
         }
     }
 }
